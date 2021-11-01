@@ -1,0 +1,3 @@
+{
+  "needToLinkTelegram": "Before you can use the command, you must have your Telegram connected to Discord. You can do this in the [Telegram bot](https://t.me/<%= botUsername %>?start=<%= Buffer.from(`discord::${userTag}::${userID}`).toString('base64') %>) or on our [website](<%= websiteURL %>)"
+}
