@@ -1,0 +1,21 @@
+version: '3'
+services:
+  redis:
+    image: 'redis'
+  mongo:
+    image: "mongo"
+    container_name: "mongodb"
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - /home/$USER/mongodb/database:/data/db
+    ports:
+      - 27017:27017
+  node-app:
+    depends_on:
+      - "mongo"
+      - "redis"
+    build: .
+    ports:
+      - '3000:3000'
